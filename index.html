@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Somos GOOD NEWS :) TU Indumentaria FELIZ">
+
+    <link rel="stylesheet" href="./styles/glider.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500&display=swap"
+        rel="stylesheet">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9eb45967b7.js"></script>
+    <title> GOOD NEWS :) </title>
+</head>
+
+<body>
+    <script src="./scripts/glider.min.js"></script>
+
+    <header class="header">
+        <nav class="navBar">
+            <div>
+                <span class="btn__nav">
+                    <i class="fas fa-solid fa-bars"></i>
+                </span>
+                <a class="navBar__logo" href="#">GOOD NEWS :)</a>
+            </div>
+            <ul class="navBar__menu">
+                <li>
+                    <a href="#" id="btnNavProductos">PRODUCTOS</a>
+                    <ul>
+                        <li><a id="btnNavSimpleTrue" href="#">SIMPLE TRUE</a></li>
+                        <li><a id="btnNavNewBorn" href="#">NEW BORN</a></li>
+                        <li><a id="btnNavNoFear" href="#">NO FEAR</a></li>
+                        <li><a id="btnNavTodosProductos" href="#">VER TODOS</a></li>
+                    </ul>
+                </li>
+                <form action="" id="searchForm">
+                    <input id="searchInput" type="text" placeholder="Buscar producto">
+                    <span id="productNotFoundedAlert">
+                        <p>No se encontraron coincidencias :(</p>
+                    </span>
+                </form>
+                <li class="navBar__menu__btnCartMenu" id="btnCartView">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="navBar__menu__btnCartMenu-counter"></span>
+                </li>
+            </ul>
+            <span class="navBar__btnCartResponsive" id="btnCartViewResponsive">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="navBar__btnCartResponsive-counter"></span>
+            </span>
+        </nav>
+    </header>
+
+    <div class="cart">
+        <div class="cart__sideContainer">
+            <div class="cart__sideContainer__title">
+                <i class="fas fa-solid fa-angle-right"></i>
+                <p><i class=" fas fa-solid fa-cart-arrow-down"></i> Carrito</p>
+            </div>
+            <div class="cart__sideContainer__items" id="cart__items">
+            </div>
+            <div class="cart__sideContainer__resume">
+                <p class="cart__sideContainer__resume__total">Carrito vacio</p>
+                <button class="cart__sideContainer__resume__btnFinishBuy">Continuar compra</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="mainInformation" id="mainInformation">
+        <div class="mainInformation__content">
+
+            <h1>SIEMPRE HAY GOOD NEWS :)</h1>
+            <h2>COLECCION SUMMER 22/23 DISPONIBLE</h2>
+            <p>  </p>
+        </div>
+    </main>
+
+    <svg class="mainInformation-svg" width="100%" viewBox="0 0 1280 140" preserveAspectRatio="none">
+        <g>
+            <path d="M0 70 L640 140 L1280 70 L1280 0H0z" />
+        </g>
+    </svg>
+
+    <div class="productsInformation" id="productsInformation">
+        <p class="productsInformation__title">SHOP NOW</p>
+        <p class="productsInformation__results"></p>
+    </div>
+    <!-- Aqui se listan los productos -->
+    <div class="productsContainer" id="productsContainer"></div>
+
+    <div class="productAddToast">
+        <p><i class="fas fa-solid fa-check"></i>Producto agregado</p>
+    </div>
+
+    <footer class="footer">
+        <svg class="footer-svg" width="100%" height="100px" viewBox="0 0 1280 140" preserveAspectRatio="none">
+            <g>
+                <path d="M640 140L1280 0H0z" />
+            </g>
+        </svg>
+        <div class="footer__content">
+            <div class="footer__content__links">
+                <h4>PRODUCTOS</h4>
+                <a href="#" id="btnFooterSimpleTrue">SIMPLE TRUE</a>
+                <a href="#" id="btnFooterNewBorn">NEW BORN</a>
+                <a href="#" id="btnFooterNoFear">NO FEAR</a>
+                <a href="#" id="btnFooterTodosProductos">VER TODOS</a>
+            </div>
+            <div class="footer__content__social">
+                <h4>SEGUINOS EN</h4>
+                <div>
+                    <a href="https://www.instagram.com" target="/blank"><i
+                            class="fa-brands fa-instagram-square"></i></a>
+                    <a href="https://www.facebook.com" target="/blank"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="https://twitter.com" target="/blank"><i class="fa-brands fa-twitter-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Template para cada producto del contenedor -->
+    <template id="template-containerProducts">
+        <div class="productsContainer__item">
+            <div class="productsContainer__item__info">
+                <div>
+                    <img src="" alt="" class="front">
+                    <img src="" alt="" class="back">
+                </div>
+                <div class="productsContainer__item__info-container">
+                    <h3 class="productsContainer__item__info__name"></h3>
+                    <p class="productsContainer__item__info__price"></p>
+                </div>
+            </div>
+            <button class="productsContainer__item__button"><i class="fas fa-solid fa-cart-plus"></i>
+            </button>
+        </div>
+    </template>
+    <!-- Template para cada producto del carrito -->
+    <template id="template-CartProducts">
+        <div class="cart__sideContainer__items__item">
+            <div class="cart__sideContainer__items__item__main">
+                <p class="cart__sideContainer__items__item__main__name"></p>
+                <button class="cart__sideContainer__items__item__main__btnDelete">
+                    <i class="fas fa-solid fa-trash"></i>
+                </button>
+            </div>
+            <div class="cart__sideContainer__items__item__description">
+                <img src="" alt="">
+                <div class="cart__sideContainer__items__item__description__units">
+                    <p class="cart__sideContainer__items__item__description__units__number"></p>
+                    <div class="cart__sideContainer__items__item__description__units__btn">
+                        <button class="cart__sideContainer__items__item__description__units__btn__add">
+                            <i class="fas fa-solid fa-plus"></i>
+                        </button>
+                        <button class="cart__sideContainer__items__item__description__units__btn__rest">
+                            <i class="fas fa-solid fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="cart__sideContainer__items__item__description__price"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
